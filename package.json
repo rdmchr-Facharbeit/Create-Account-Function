@@ -1,0 +1,16 @@
+{
+  "name": "facharbeit-function",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "node-appwrite": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}
