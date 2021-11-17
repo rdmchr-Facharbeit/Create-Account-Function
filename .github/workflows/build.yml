@@ -1,0 +1,26 @@
+name: Deploy to Appwrite
+on:
+  push:
+    branches:
+     - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Install Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install NPM dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Deploy my function to Appwrite
+        uses: rdmchr/Appwrite-Deploy@v1.4
+        with:
+          endpoint: 'https://api.gettooru.com/v1'
+          project: '6193ae37b6810'
+          key: ${{ env.APPWRITE_SECRET }}

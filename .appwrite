@@ -1,0 +1,3 @@
+COMMAND="node dist/index.js"
+FUNCID="619432b513b88"
+CODE="./"
