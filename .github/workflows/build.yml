@@ -18,9 +18,15 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy my function to Appwrite
-        uses: rdmchr/Appwrite-Deploy@v1.4
+      - name: Init Appwrite CLI
+        uses: appwrite/setup-for-actions@v1
         with:
           endpoint: 'https://api.gettooru.com/v1'
           project: '6193ae37b6810'
           key: '${{ secrets.APPWRITE_API_KEY }}'
+      - name: Deploy my function to Appwrite
+        run: |
+            appwrite functions createTag \
+              --functionId='619432b513b88' \
+              --command="node dist/index.js" \
+              --code="./" 
