@@ -23,4 +23,4 @@ jobs:
         with:
           endpoint: 'https://api.gettooru.com/v1'
           project: '6193ae37b6810'
-          key: ${{ secrets.APPWRITE_API_KEY }}
+          key: '${{ secrets.APPWRITE_API_KEY }}'
