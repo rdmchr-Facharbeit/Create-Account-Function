@@ -39,6 +39,7 @@ async function run() {
         userId: userId,
         data: res.$id,
         created: new Date().getTime(),
+        branch: 'none'
     };
 
     await db.createDocument(usersCollection, userObj, [`user:${userId}`], []).catch((err) => {
