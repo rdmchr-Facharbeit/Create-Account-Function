@@ -18,6 +18,7 @@ const userId = eventData.$id;
 
 
 async function run() {
+    console.log(JSON.stringify(eventData));
     const dataObj = {
         userId: userId,
     };
