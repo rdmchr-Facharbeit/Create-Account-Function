@@ -36,7 +36,7 @@ async function run() {
     const userObj = {
         userId: userId,
         data: res.$id,
-        created: new Date().getDate(),
+        created: new Date().getTime(),
     };
 
     await db.createDocument(usersCollection, userObj, [`user:${userId}`], []).catch((err) => {
