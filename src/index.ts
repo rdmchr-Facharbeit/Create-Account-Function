@@ -14,7 +14,7 @@ const eventData = JSON.parse(process.env.APPWRITE_FUNCTION_EVENT_DATA);
 const dataCollection = process.env.APPWRITE_DATA_COLLECTION;
 const usersCollection = process.env.APPWRITE_USERS_COLLECTION;
 
-const userId = eventData.$id;
+const userId = eventData.userId;
 
 
 async function run() {
@@ -32,6 +32,7 @@ async function run() {
     if (!res.$id) {
         console.error('Error creating document');
         process.exit(5);
+        return;
     }
 
     const userObj = {
